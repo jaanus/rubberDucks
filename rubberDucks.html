@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	
+	
+	<title>Rubber ducks webkit demo</title>
+	<style type="text/css">
+body {
+	font-family: "Helvetica Neue", Helvetica;
+	font-size: 24px;
+}
+
+p {
+	font-weight: 100;
+	margin-left: 30px;
+	color:#888;
+}
+
+.rubberDuck {
+	position: absolute;
+	opacity: 0;
+}
+
+.duckMover {
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function:ease-in-out;
+}
+
+.barContainer {
+	float: left;
+}
+
+.bar {
+	height:90px;
+	width:80%;
+	-webkit-border-radius:5px;
+	border: 5px solid rgba(255,255,255,0);
+	-webkit-transition-property: width;
+	-webkit-transition-duration: 0.2s;
+	-webkit-transition-timing-function:ease;
+	background-color: #cde76a;
+}
+
+.balance {
+	text-align:right;
+	padding:20px;
+}
+
+.barContainer {
+	width: 400px;
+	height: 100px;
+	margin:30px;
+	border: 1px solid #cccccc;
+	-webkit-border-radius:5px;
+}
+
+@-webkit-keyframes greenPulse {
+	from { border-color: rgba(0,255,0,1); }
+	to { border-color: rgba(255,255,255,0.5); }
+}
+
+@-webkit-keyframes greenPulseEnd {
+	from { border-color: rgba(0,255,0,1); }
+	to { border-color: rgba(0,255,0,0); }
+}
+
+@-webkit-keyframes grayPulse {
+	from { border-color: rgba(0,0,0,0.5); }
+	to { border-color: rgba(0,0,0,0); }
+}
+
+@-webkit-keyframes grayPulseEnd {
+	from { border-color: rgba(0,0,0,0.5); }
+	to { border-color: rgba(0,0,0,0); }
+}
+
+.sourceBarEnd, .targetBarEnd {
+-webkit-animation-duration: 0.5s;
+-webkit-animation-iteration-count: 1;
+}
+
+.sourceBar, .targetBar {
+-webkit-animation-duration: 1s;
+-webkit-animation-direction: alternate;
+-webkit-animation-iteration-count: infinite;
+}
+
+.sourceBar {
+	-webkit-animation-name: greenPulse;
+}
+
+.sourceBarEnd {
+	-webkit-animation-name: greenPulseEnd;
+}
+
+.targetBar {
+	-webkit-animation-name: grayPulse;
+}
+
+.targetBarEnd {
+	-webkit-animation-name: grayPulseEnd;
+}
+
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="rubberDucks.js"></script>
+	
+</head>
+
+<body>
+	
+<p>Hello. Each box contains up to 100 rubber ducks. Drag from one box to another to move ducks between boxes. Use two fingers to rotate and zoom the boxes.</p>
+
+<p><a href="http://jaanus.com/">Read more about this demo.</a></p>
+
+<div class="container">
+	<div class="barContainer duck0">
+		<div class="bar"><div class="balance">10</div></div>			
+	</div>
+
+	<div class="barContainer duck1">
+		<div class="bar"><div class="balance">20</div></div>		
+	</div>
+
+	<div class="barContainer duck2">
+		<div class="bar"><div class="balance">30</div></div>			
+	</div>
+
+</div>
+
+</body>
+</html>
